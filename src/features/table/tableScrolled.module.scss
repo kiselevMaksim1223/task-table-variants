@@ -1,14 +1,22 @@
-.table td,
-.table th {
-  padding: 5px;
-  text-align: center;
-  vertical-align: middle;
+.table {
+  font-size: 14px;
+
+  td,
+  th {
+    padding: 5px 5px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  tr > td:nth-child(1),
+  tr > td:nth-child(11),
+  tr > td:nth-child(12),
+  tr > td:nth-child(13),
+  tr > td:nth-child(14) {
+    min-width: 85px;
+  }
 }
 
-.table tr > td:nth-child(1),
-tr > td:nth-child(10),
-tr > td:nth-child(11),
-tr > td:nth-child(12),
-tr > td:nth-child(13) {
-  min-width: 100px;
+.table tr > td:nth-child(4){
+  min-width: 70px;
 }

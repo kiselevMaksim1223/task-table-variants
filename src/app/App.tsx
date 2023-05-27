@@ -1,30 +1,27 @@
 import React from 'react'
 
-import { Badge, Card, Col, Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
+import { Route, Routes } from 'react-router-dom'
 
-import { AccordionComponent } from '../features/accordion/accordion'
+import { AccordionComponentResponsive } from '../features/accordion/accordionResponsive'
+import { AccordionComponentScrolled } from '../features/accordion/accordionScrolled'
 import { Header } from '../features/header/header'
+import { HomePage } from '../features/homePage/homePage'
 
 export const App = () => {
   return (
-    <Container fluid={'xxl'}>
-      <Row>
-        <Col>
-          <Header />
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={1}>
-          <div className="h-100 bg-light ">
-            <Badge pill bg="info" className="mx-3 my-5">
-              Info
-            </Badge>{' '}
-          </div>
-        </Col>
-        <Col sm={11}>
-          <AccordionComponent />
-        </Col>
-      </Row>
-    </Container>
+    <div className={'container'}>
+      <Header />
+
+      <div>
+        <Container fluid={'xxl'}>
+          <Routes>
+            <Route path={'/'} element={<HomePage />} />
+            <Route path={'/scrolled'} element={<AccordionComponentScrolled />} />
+            <Route path={'/responsive'} element={<AccordionComponentResponsive />} />
+          </Routes>
+        </Container>
+      </div>
+    </div>
   )
 }

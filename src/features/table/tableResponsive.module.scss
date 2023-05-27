@@ -1,17 +1,112 @@
-.wrapper{
+$thead-background-color: rgba(178, 207, 236, 0.29);
+$tbody-hover-background-color: rgba(204, 204, 204, 0.63);
+$table-mobile-background-color: rgba(214, 233, 248, 0.72);
+$table-border-color: #b2cfec;
+$table-mobile-border-color: #cecece;
 
+.wrapper {
+  overflow-x: auto;
 }
 
-.table{
+.table {
   width: 100%;
   border-collapse: collapse;
-}
-.table td,
-.table th {
-  min-width: 100px;
-  padding: 5px;
-  border:  1px solid black;
-}
-.table td {
-  position: relative;
+  font-size: 14px;
+  text-align: center;
+
+  thead {
+    background: $thead-background-color;
+  }
+
+  tbody {
+    tr:hover {
+      background: $tbody-hover-background-color;
+    }
+  }
+
+  tr > td:nth-child(1),
+  tr > td:nth-child(10),
+  tr > td:nth-child(11),
+  tr > td:nth-child(12),
+  tr > td:nth-child(13) {
+    min-width: 85px;
+  }
+
+  td,
+  th {
+    padding: 5px;
+    border-bottom: 1px solid $table-border-color;
+  }
+
+  td {
+    position: relative;
+  }
+
+  @media screen and (max-width: 1020px) {
+    font-size: 16px;
+
+    .thead {
+      display: none;
+    }
+
+    td {
+      display: block;
+      padding-left: 40%;
+      border: 1px solid transparent;
+    }
+
+    td:nth-child(odd) {
+      background: $table-mobile-background-color;
+    }
+
+    tr:hover td {
+      background: $table-mobile-background-color;
+      border-bottom: 1px solid $table-mobile-border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 2%;
+      font-weight: bold;
+    }
+
+    tr {
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    td:before {
+      position: static;
+      display: block;
+      background-color: $table-mobile-background-color;
+      font-weight: bold;
+      padding: 10px;
+      border-bottom: 1px solid $table-mobile-border-color;
+    }
+
+    td {
+      padding: 0 10px;
+      text-align: center;
+    }
+
+    td:nth-child(odd) {
+      background: none;
+    }
+
+    span {
+      display: block;
+      padding: 10px 0;
+    }
+  }
 }

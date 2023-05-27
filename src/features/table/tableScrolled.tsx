@@ -2,7 +2,6 @@ import React, { FC } from 'react'
 
 import { Table } from 'react-bootstrap'
 
-import { dataType } from '../../app/data/data.type'
 import { useAppSelector } from '../../app/store/store'
 import { DropDown } from '../dropDown/dropDown'
 
@@ -11,27 +10,27 @@ import s from './tableScrolled.module.scss'
 export const TableScrolled: FC<{ filteredBy?: string }> = ({ filteredBy }) => {
   const data = useAppSelector(state => state.app)
   const filteredData = data.filter(t =>
-    filteredBy ? t.status === filteredBy : t.status !== 'завершена'
+    filteredBy ? t.status === filteredBy : t.status !== 'выполнена'
   )
 
   return (
     <div>
-      <Table responsive="xl" className={s.table}>
-        <thead>
+      <Table responsive className={s.table} hover>
+        <thead className="bg-info bg-opacity-10">
           <tr>
-            <th>Date</th>
-            <th>Task Code</th>
-            <th>Project Code</th>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Responsible</th>
-            <th>Reassign</th>
-            <th>Priority</th>
-            <th>Comment</th>
-            <th>Planned Time</th>
-            <th>Actual Time</th>
-            <th>Started</th>
-            <th>Finished</th>
+            <th>Дата</th>
+            <th>Шифр задачи</th>
+            <th>Шифр проекта</th>
+            <th>Задача</th>
+            <th>Статус</th>
+            <th>Ответственный</th>
+            <th>Переназначить</th>
+            <th>Приоретет</th>
+            <th>Комментарий</th>
+            <th>План время</th>
+            <th>Факт время</th>
+            <th>Начал</th>
+            <th>Закончил</th>
           </tr>
         </thead>
         <tbody>

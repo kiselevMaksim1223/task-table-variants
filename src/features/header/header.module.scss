@@ -1,0 +1,31 @@
+.info {
+  display: flex;
+  gap: 15px;
+  padding:0 10px;
+
+  .ava {
+    width: 35px;
+    height: 35px;
+    background-color: #cccccc;
+    border-radius: 50%;
+  }
+
+  .desc {
+    p {
+      font-size: 12px;
+      color: #cccccc;
+      margin: 0;
+    }
+
+    h6 {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 515px){
+  .info{
+    display: none;
+  }
+}

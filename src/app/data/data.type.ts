@@ -15,4 +15,4 @@ export type dataType = {
   finished: string
 }
 
-export type StatusType = 'на паузе' | 'завершена' | 'в работе'
+export type StatusType = 'на паузе' | 'выполнена' | 'в работе'

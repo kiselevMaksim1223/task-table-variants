@@ -5,15 +5,18 @@ import { DropDown } from '../dropDown/dropDown'
 
 import s from './tableResponsive.module.scss'
 
-export const TableResponsive: FC = () => {
-  const data = useAppSelector(state => state.app)[0]
+export const TableResponsive: FC<{ filteredBy?: string }> = ({ filteredBy }) => {
+  const data = useAppSelector(state => state.app)
+  const filteredData = data.filter(t =>
+    filteredBy ? t.status === filteredBy : t.status !== 'выполнена'
+  )
 
   return (
     <div className={s.wrapper}>
       <table className={s.table}>
-        <thead>
+        <thead className={s.thead}>
           <tr>
-            <th className="text-center align-items-center">Дата</th>
+            <th>Дата</th>
             <th>Шифр задачи</th>
             <th>Шифр проекта</th>
             <th>Задача</th>
@@ -29,23 +32,53 @@ export const TableResponsive: FC = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td data-label="Дата">{data.date}</td>
-            <td data-label="Шифр задачи">{data.taskCode}</td>
-            <td data-label="Шифр проекта">{data.projectCode}</td>
-            <td data-label="Задача">{data.task}</td>
-            <td data-label="Статус">
-              <DropDown id={data.id} />
-            </td>
-            <td data-label="Ответственный">{data.responsible}</td>
-            <td data-label="Переназначить">{data.reassign}</td>
-            <td data-label="Приоретет">{data.priority}</td>
-            <td data-label="Комментарий">{data.comment}</td>
-            <td data-label="План время">{data.plannedTime}</td>
-            <td data-label="Факт время">{data.actualTime}</td>
-            <td data-label="Начал">{data.started}</td>
-            <td data-label="Закончил">{data.finished}</td>
-          </tr>
+          {filteredData.map(t => {
+            return (
+              <tr key={t.id}>
+                <td data-label="Дата">
+                  <span>{t.date}</span>
+                </td>
+                <td data-label="Шифр задачи">
+                  <span>{t.taskCode}</span>
+                </td>
+                <td data-label="Шифр проекта">
+                  <span>{t.projectCode}</span>
+                </td>
+                <td data-label="Задача">
+                  <span>{t.task}</span>
+                </td>
+                <td data-label="Статус">
+                  <span>
+                    <DropDown id={t.id} />
+                  </span>
+                </td>
+                <td data-label="Ответственный">
+                  <span>{t.responsible}</span>
+                </td>
+                <td data-label="Переназначить">
+                  <span>{t.reassign}</span>
+                </td>
+                <td data-label="Приоретет">
+                  <span>{t.priority}</span>
+                </td>
+                <td data-label="Комментарий">
+                  <span>{t.comment}</span>
+                </td>
+                <td data-label="План время">
+                  <span>{t.plannedTime}</span>
+                </td>
+                <td data-label="Факт время">
+                  <span>{t.actualTime}</span>
+                </td>
+                <td data-label="Начал">
+                  <span>{t.started}</span>
+                </td>
+                <td data-label="Закончил">
+                  <span>{t.finished}</span>
+                </td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
