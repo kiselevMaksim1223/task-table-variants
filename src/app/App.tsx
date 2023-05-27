@@ -12,7 +12,6 @@ export const App = () => {
   return (
     <div className={'container'}>
       <Header />
-
       <div>
         <Container fluid={'xxl'}>
           <Routes>
