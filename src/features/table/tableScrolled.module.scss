@@ -1,0 +1,14 @@
+.table td,
+.table th {
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table tr > td:nth-child(1),
+tr > td:nth-child(10),
+tr > td:nth-child(11),
+tr > td:nth-child(12),
+tr > td:nth-child(13) {
+  min-width: 100px;
+}

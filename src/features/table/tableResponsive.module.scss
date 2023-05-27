@@ -1,0 +1,17 @@
+.wrapper{
+
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.table td,
+.table th {
+  min-width: 100px;
+  padding: 5px;
+  border:  1px solid black;
+}
+.table td {
+  position: relative;
+}
