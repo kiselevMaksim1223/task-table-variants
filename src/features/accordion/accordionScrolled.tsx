@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import Accordion from 'react-bootstrap/Accordion'
 
-import { TableScrolled } from '../table/tableScrolled'
+import { TableScrolled } from '../table/tableScrolled/tableScrolled'
 
 export const AccordionComponentScrolled: FC = () => {
   return (

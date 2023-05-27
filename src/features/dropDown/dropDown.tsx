@@ -31,7 +31,7 @@ export const DropDown: FC<{ id: string }> = ({ id }) => {
       variant={dropDownVariant(task as dataType)}
     >
       <Dropdown.Item onClick={() => onClickHandler('на паузе')}>на паузе</Dropdown.Item>
-      <Dropdown.Item onClick={() => onClickHandler('выполнена')}>завершена</Dropdown.Item>
+      <Dropdown.Item onClick={() => onClickHandler('выполнена')}>выполнена</Dropdown.Item>
       <Dropdown.Item onClick={() => onClickHandler('в работе')}>в работе</Dropdown.Item>
     </DropdownButton>
   )

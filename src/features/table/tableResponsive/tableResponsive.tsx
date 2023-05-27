@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
-import { useAppSelector } from '../../app/store/store'
-import { DropDown } from '../dropDown/dropDown'
+import { useAppSelector } from '../../../app/store/store'
+import { DropDown } from '../../dropDown/dropDown'
 
 import s from './tableResponsive.module.scss'
 

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import Accordion from 'react-bootstrap/Accordion'
 
-import { TableResponsive } from '../table/tableResponsive'
+import { TableResponsive } from '../table/tableResponsive/tableResponsive'
 
 export const AccordionComponentResponsive: FC = () => {
   return (
