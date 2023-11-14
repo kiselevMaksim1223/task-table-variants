@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Task Table Variants
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Task Table Variants is a dynamic application that offers two distinct views for managing tasks. Utilizing React, SCSS, and Bootstrap, this app presents users with two different table options for task organization based on window size adjustments.
 
-## Available Scripts
+Variant 1 - Scrolled Table:
+In this variant, the table horizontally scrolls as the browser window size decreases. It ensures that all task details remain accessible and navigable, allowing users to view and interact with the complete dataset conveniently.
 
-In the project directory, you can run:
+Variant 2 - Responsive Table:
+The second variant introduces a responsive design to the table. As the browser window shrinks, the table transforms its appearance to suit the available space, optimizing task visibility and readability without the need for horizontal scrolling. This view adapts the task representation for better usability on smaller screens.
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Dual Table Variants: Choose between a horizontally scrolled table or a responsive table based on browser window size.
+SCSS and Bootstrap: Enhance styling and responsiveness for a visually appealing and user-friendly interface.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Deploy version
 
-### `yarn test`
+You can see the demo on https://teal-melomakarona-bced53.netlify.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Local Setup
 
-### `yarn build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Before running the application, make sure you have the following dependencies installed on your system:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Node.js](https://nodejs.org/) (npm will be installed alongside Node.js)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `yarn eject`
+1. Clone this repository to your local machine:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```bash
+   git clone https://github.com/kiselevMaksim1223/task-table-variants
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Navigate to the project directory:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ```bash
+   cd task-table-variants
 
-## Learn More
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install the project dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   yarn
+
+   ```
+
+## Running the Application
+
+After instaling all dependencies, you can run the application:
+
+Start the development server:
+
+```bash
+yarn start
+
+```
+
+Access the application in your web browser at http://localhost:3000.
