@@ -60,7 +60,7 @@
       "react-app/jest"
     ]
   },
-  "name": "dna_test",
+  "name": "task_table_variants",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
